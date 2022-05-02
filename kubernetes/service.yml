@@ -3,7 +3,7 @@ kind: Service
 metadata:
   labels:
     service-label-key: service-label-value 
-  name: service-name
+  name: angularapp
 spec:
   type: ClusterIP
   ports:
