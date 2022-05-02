@@ -32,7 +32,7 @@ stages:
       inputs:
         PathtoPublish: '$(Pipeline.Workspace)/s/kubernetes'
         ArtifactName: 'manifests'
-        publishLocation: 'Container'
+        publishLocation: 'pipeline'
 
 - stage: Deploy
   displayName: deploy to DEV
