@@ -50,7 +50,7 @@ stages:
         inputs:
           buildType: 'current'
           artifactName: 'manifests'
-          targetPath: '$(Pipeline.Workspace)/Manifests'
+          targetPath: '$(Pipeline.Workspace)/manifests'
 
       - task: KubernetesManifest@0
         inputs:
@@ -67,5 +67,5 @@ stages:
           kubernetesServiceConnection: 'AKSconnection'
           namespace: 'defualt'
           manifests: |
-            $(Pipeline.Workspace)/Manifests/deployment.yml
-            $(Pipeline.Workspace)/Manifests/service.yml
+            $(Pipeline.Workspace)/manifests/deployment.yml
+            $(Pipeline.Workspace)/manifests/service.yml
