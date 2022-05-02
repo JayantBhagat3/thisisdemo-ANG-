@@ -1,7 +1,7 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: deployment-name
+  name: angularapp
 spec:
   replicas: 1
   template:
@@ -10,8 +10,8 @@ spec:
         label-key : label-value  
     spec:
       containers:
-        - name: deploment-container-name
-          image: inyee/spa-demo:v1
+        - name: angularapp
+          image: acr4Pipeline.azurecr.io/angularapp
           imagePullPolicy: Always
           ports:
           - containerPort: 80
