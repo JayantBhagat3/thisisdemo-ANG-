@@ -23,7 +23,7 @@ stages:
         containerRegistry: 'ACRconnection'
         repository: 'angularapp'
         command: 'buildAndPush'
-        Dockerfile: '''$(Build.SourcesDirectory)/Dockerfile'''
+        Dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
         tags: |
           $(tag)
           latest
