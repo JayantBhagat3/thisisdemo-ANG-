@@ -27,3 +27,24 @@ stages:
         tags: |
           $(tag)
           latest
+
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(Pipeline.Workspace)/s/kubernetes'
+        ArtifactName: 'manifests'
+        publishLocation: 'Container'
+
+- stage: Deploy
+  displayName: deploy to DEV
+  jobs:
+    - job: Deploy
+      displayName: Deploy to AKS
+      pool:
+        vmImage: ubuntu-latest
+      steps:
+      
+      - task: DownloadPipelineArtifact@2
+        inputs:
+          buildType: 'current'
+          artifactName: 'manifests'
+          targetPath: '$(Pipeline.Workspace)/Manifests'
